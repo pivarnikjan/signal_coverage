@@ -67,12 +67,12 @@ getDistance = function (p1, p2) {
 addMarker(michalovce).addTo(mymap);
 addMarker(bratislava).addTo(mymap);
 addMarker(trnava).addTo(mymap);
-coverage_area(getDistance(bratislava,trnava),bratislava).addTo(mymap);
+// coverage_area(getDistance(bratislava,trnava),bratislava).addTo(mymap);
 
 addMarker(banska_bystrica).addTo(mymap);
 addMarker(levice).addTo(mymap);
-coverage_area(getDistance(banska_bystrica,levice),banska_bystrica).addTo(mymap);
+// coverage_area(getDistance(banska_bystrica,levice),banska_bystrica).addTo(mymap);
 
 addMarker(trencin).addTo(mymap);
 addMarker(piestany).addTo(mymap);
-coverage_area(getDistance(trencin,piestany),trencin).addTo(mymap);
+// coverage_area(getDistance(trencin,piestany),trencin).addTo(mymap);
