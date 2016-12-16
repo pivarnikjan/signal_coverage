@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "internet_na_den.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "signal_coverage.settings")
 
 application = get_wsgi_application()

@@ -52,7 +52,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'internet_na_den.urls'
+ROOT_URLCONF = 'signal_coverage.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'internet_na_den.wsgi.application'
+WSGI_APPLICATION = 'signal_coverage.wsgi.application'
 
 
 # Database

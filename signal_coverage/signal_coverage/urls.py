@@ -5,7 +5,7 @@ from catalogue import views
 
 urlpatterns = [
     # Examples:
-    # url(r'^$', 'internet_na_den.views.home', name='home'),
+    # url(r'^$', 'signal_coverage.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     url(r'^$', views.index, name='index'),
     url(r'', include('catalogue.urls')),
