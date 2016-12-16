@@ -1,9 +1,17 @@
 from django.contrib import admin
 
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
+
 from catalogue.models import SignalCoverage
 
 
-class SignalCoverageAdmin(admin.ModelAdmin):
+class SignalCoverageResources(resources.ModelResource):
+    class Meta:
+        model = SignalCoverage
+
+
+class SignalCoverageIEAdmin(ImportExportModelAdmin):
     list_display = (
         'site_name',
         'site_lat',
@@ -14,7 +22,10 @@ class SignalCoverageAdmin(admin.ModelAdmin):
         'cpe_imsi',
         'cpe_lat',
         'cpe_lon',
-        'cpe_status'
+        'cpe_status',
     )
+    resource_class = SignalCoverageResources
+    pass
 
-admin.site.register(SignalCoverage, SignalCoverageAdmin)
+
+admin.site.register(SignalCoverage, SignalCoverageIEAdmin)

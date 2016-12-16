@@ -13,9 +13,6 @@ def index(request):
     context = {
         "object_list": queryset
     }
-    print queryset
-    # for item in queryset:
-    #     print item
     return render(request, 'index.html', context)
 
 

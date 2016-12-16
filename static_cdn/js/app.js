@@ -8,8 +8,8 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token='
     id: 'mapbox.streets'
 }).addTo(mymap);
 
-var Up = 'UP';
-var Down = 'DOWN';
+var up = 'UP';
+var down = 'DOWN';
 
 var addMarker = function (coordinates) {
     // lMarker = new L.marker([coordinates.lat, coordinates.lng]);

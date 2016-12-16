@@ -3,8 +3,8 @@ from django.db import models
 
 class SignalCoverage(models.Model):
     STATUSES = (
-        ('up', 'UP'),
-        ('down', 'DOWN'),
+        ('Up', 'UP'),
+        ('Down', 'DOWN'),
     )
 
     site_name = models.CharField(max_length=50)
