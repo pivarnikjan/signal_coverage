@@ -9,6 +9,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token='
 }).addTo(mymap);
 
 var addMarker = function (coordinates) {
+    // lMarker = new L.marker([coordinates.lat, coordinates.lng]);
     return L.marker([coordinates.lat, coordinates.lng]);
 };
 
@@ -36,20 +37,22 @@ var levice = new Coordinates(48.216454, 18.600445);
 var trencin = new Coordinates(48.891132, 18.042297);
 var piestany = new Coordinates(48.589233, 17.834047);
 
+var convertCoordinates = function (startingPosition, endingPosition) {
+    var pointA = new L.LatLng(startingPosition.lat, startingPosition.lng);
+    var pointB = new L.LatLng(endingPosition.lat, endingPosition.lng);
+    return [pointA, pointB];
+};
 
-var pointA = new L.LatLng(bratislava.lat, bratislava.lng);
-var pointB = new L.LatLng(michalovce.lat, michalovce.lng);
-var pointList = [pointA, pointB];
+var addLine = function (startingPosition, endingPosition, color) {
+    polyLine = new L.Polyline(convertCoordinates(startingPosition, endingPosition), {
+        color: color,
+        weight: 3,
+        smoothFactor: 1
+    });
+    return polyLine;
+};
 
-var addLine = new L.Polyline(pointList, {
-    color: 'blue',
-    weight: 3,
-    smoothFactor: 1
-});
-addLine.addTo(mymap);
-
-
-var rad = function(x) {
+var rad = function (x) {
     return x * Math.PI / 180;
 };
 
@@ -76,3 +79,6 @@ addMarker(levice).addTo(mymap);
 addMarker(trencin).addTo(mymap);
 addMarker(piestany).addTo(mymap);
 // coverage_area(getDistance(trencin,piestany),trencin).addTo(mymap);
+
+addLine(bratislava, trnava, 'red').addTo(mymap);
+addLine(piestany, trencin, 'blue').addTo(mymap);
