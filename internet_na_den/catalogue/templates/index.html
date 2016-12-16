@@ -6,6 +6,16 @@
     <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
     <script src="{% static 'js/app.js' %}"></script>
     <script type="text/javascript">
-
+        {% for record in object_list %}
+            var superObject = {
+                site_lat: {{ record.site_lat }},
+                site_lng: {{ record.site_lon }},
+                cpe_lat: {{ record.cpe_lat }},
+                cpe_lng: {{ record.cpe_lon }},
+                site_status: {{ record.site_status }},
+                cpe_status: {{ record.cpe_status }}
+            };
+            makeConnection(superObject);
+        {% endfor %}
     </script>
 {% endblock content %}

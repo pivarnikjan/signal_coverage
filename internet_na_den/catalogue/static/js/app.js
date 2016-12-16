@@ -8,6 +8,9 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token='
     id: 'mapbox.streets'
 }).addTo(mymap);
 
+var up = 'UP';
+var down = 'DOWN';
+
 var addMarker = function (coordinates) {
     // lMarker = new L.marker([coordinates.lat, coordinates.lng]);
     return L.marker([coordinates.lat, coordinates.lng]);
@@ -110,4 +113,4 @@ var trencin = new Coordinates(48.891132, 18.042297);
 var piestany = new Coordinates(48.589233, 17.834047);
 
 
-makeConnection(superObject);
+// makeConnection(superObject);

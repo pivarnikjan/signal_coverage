@@ -9,7 +9,7 @@ _logger = logging.getLogger(__name__)
 
 
 def index(request):
-    queryset = SignalCoverage.objects.order_by()
+    queryset = SignalCoverage.objects.all()
     context = {
         "object_list": queryset
     }
